@@ -1,0 +1,19 @@
+extends ../layouts/default
+
+block css
+	link(href="/styles/main.css", rel="stylesheet")
+	link(href="https://fonts.googleapis.com/css?family=Sacramento", rel="stylesheet")
+	link(href="https://fonts.googleapis.com/css?family=Flamenco", rel="stylesheet")
+
+block content
+	div.wide
+		div.page#works
+			div.heading Gallery
+			div.content
+				each work in works
+					div.thumb
+						a(href="/")
+							div.th-label
+								div=work.title
+							img(src=work.thumb.url)
+				div.clear

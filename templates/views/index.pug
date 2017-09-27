@@ -1,0 +1,78 @@
+extends ../layouts/default
+
+block css
+	link(href="/styles/main.css", rel="stylesheet")
+	link(href="https://fonts.googleapis.com/css?family=Sacramento", rel="stylesheet")
+	link(href="https://fonts.googleapis.com/css?family=Flamenco", rel="stylesheet")
+block js
+	script(src='/js/init.js')
+block content
+	if galleries.length
+			each gallery in galleries
+				if gallery.name=="Slider"
+					div.wide.first(index="1",style="background-image: url('"+gallery._.heroImage.limit()+"');")#slider
+					div.wide.slider#slider-nav
+						ul
+							-var i=1
+							each image in gallery.images						
+								-if (i==1) 
+									li.active(index='1',imgurl=gallery._.heroImage.limit())
+								-else
+									li(index=i,imgurl=image.url)
+								- 
+								-i=i+1
+	div#full-img
+		a.prev(href="javascript:showPrevImg()")
+		a.next(href="javascript:showNextImg()")
+		div.img-content
+			img(src="images/loading.gif")
+		a.close(href="javascript:closeFullImg()")
+		div.clear
+	div.wide
+		div.page#works
+			div.heading Gallery
+			div.content
+				-var i=1
+				each work in works
+					if work.isOnDefault==true
+						div.thumb
+							a(href="javascript:openFullImg("+i+")",index=i,bigimg=work.image.url)
+								div.th-label
+									div=work.title
+								img(src=work.thumb.url)
+						-i=i+1
+				div.clear
+				a.jb-link(href='/gallery') Discover more...
+	div.wide
+			div.heading Julia Budnik Art: the beauty of streets
+			div.content
+				iframe.vimeoplayer(src="https://player.vimeo.com/video/228616732",frameborder="0",align="middle", webkitallowfullscreen, mozallowfullscreen, allowfullscreen)
+	div.container.city.second
+	div.wide.second#bio
+		div.heading About me
+		div.container
+			div.column.left
+				img(src="images/bio.jpg", width="100%")
+			div.column.right 
+				|My name is Julia and I am the artist. Here you can find the collection of my art works. I want to share with you |the beauty of the architecture, memories about great travels and inspire people to keep nice moments in their hearts. I  draw different cities and towns on paper, walls or furniture.  If you want to order my art, let me know the |city and the format: 
+				a.jb-link.white(href="mailto:julia.budnik.art@gmail.com" ) julia.budnik.art@gmail.com
+				|. To discover the full collection of my art works, please visit my 
+				a.jb-link.black(href="http://juliabudnikart.blogspot.kr/") blog 
+			div.clear
+	div.container.city.third
+	div.container.page#contact
+			div.heading.with-margin Contact
+			div.column.left
+				input.black-input(type="text", placeholder="Name*", required, onkeyup="validateName(this)")
+				input.black-input(type="email", placeholder="E-mail*",required, onkeyup="validateEmail(this)")
+
+			div.column.right
+				textarea.black-input(type="text",height="100", placeholder="Message")
+			div.clear
+			
+			input.black-input(onclick="validateForm()" 	type="button" value="Send" )
+			div.social-contacts
+				a.social.bs(href="http://juliabudnikart.blogspot.kr/", target="_blank")
+				a.social.ig(href="https://www.instagram.com/martovskiiejik/",target="_blank")
+				a.social.vimeo(href="https://vimeo.com/user69484236", target="_blank")
+			div.clear
