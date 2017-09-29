@@ -18,6 +18,12 @@ h2{
 p{
 	margin-bottom: 24px;
 }
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 .header{
 	background-image: url('../images/bg-gr.png');
 	background-repeat: repeat-x;
@@ -485,4 +491,8 @@ footer{
 		padding-right: 10px;
 	}
 	#contact .column.right{margin:0;padding:0 }
+
+	.vimeoplayer{
+	width:100%;
+	}
 }

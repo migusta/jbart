@@ -80,7 +80,7 @@ function validateForm(){
 		if($(this).attr("type")=="email") successEmail=validateName(this);
 	});
 	if(successName&&successEmail) {
-		$("#contact").text("Thank you for contact me.")
+		$("#contact").html("<h3>Thank you for contact me.</h3>")
 	}
 }
 

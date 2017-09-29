@@ -10,8 +10,8 @@ var keystone = require('keystone');
 // and documentation.
 
 keystone.init({
-	'name': 'My Site',
-	'brand': 'My Site',
+	'name': 'JB art',
+	'brand': 'JB art',
 
 	'less': 'public',
 	'static': 'public',
@@ -46,7 +46,8 @@ keystone.set('routes', require('./routes'));
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
-	posts: ['posts', 'post-categories'],
+	// posts: ['posts', 'post-categories'],
+	works: 'works',
 	galleries: 'galleries',
 	enquiries: 'enquiries',
 	users: 'users',
