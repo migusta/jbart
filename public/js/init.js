@@ -79,7 +79,9 @@ function validateForm(){
 		if($(this).attr("type")=="text") successName=validateName(this);
 		if($(this).attr("type")=="email") successEmail=validateName(this);
 	});
-	return successName&&successEmail;
+	if(successName&&successEmail) {
+		$("#contact").text("Thank you for contact me.")
+	}
 }
 
 function validateName(obj){
