@@ -20,9 +20,9 @@ var _ = require('lodash');
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		// { label: 'Home', key: 'home', href: '/' },
-		{ label: 'Work', key: 'blog', href: '/works' },
-		{ label: 'Bio', key: 'gallery', href: '/gallery' },
-		{ label: 'Contact', key: 'contact', href: '/contact' },
+		{ label: 'Work', key: 'blog', href: 'javascript:ScrollTo("works")' },
+		{ label: 'Bio', key: 'gallery', href: 'javascript:ScrollTo("bio")' },
+		{ label: 'Contact', key: 'contact', href: 'javascript:ScrollTo("contact")' },
 	];
 	res.locals.user = req.user;
 	next();

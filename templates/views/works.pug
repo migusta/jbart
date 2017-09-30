@@ -4,7 +4,8 @@ block css
 	link(href="/styles/main.css", rel="stylesheet")
 	link(href="https://fonts.googleapis.com/css?family=Sacramento", rel="stylesheet")
 	link(href="https://fonts.googleapis.com/css?family=Flamenco", rel="stylesheet")
-
+block js
+	script(src='/js/common.js')
 block content
 	div.wide
 		div.page#works
@@ -17,3 +18,4 @@ block content
 								div=work.title
 							img(src=work.thumb.url)
 				div.clear
+				a.jb-link(href='/#works') Back to main page 

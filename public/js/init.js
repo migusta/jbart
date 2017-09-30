@@ -71,18 +71,6 @@ function showNextImg(){
 	$("#full-img img").attr("src",bigImgUrl);
 }
 //форма контактов
-function validateForm(){
-	var successName=true;
-	var successEmail=true;
-
-	$("#contact :input[required]").each(function(){
-		if($(this).attr("type")=="text") successName=validateName(this);
-		if($(this).attr("type")=="email") successEmail=validateName(this);
-	});
-	if(successName&&successEmail) {
-		$("#contact").html("<h3>Thank you for contact me.</h3>")
-	}
-}
 
 function validateName(obj){
 	var text=obj.value;
@@ -100,3 +88,28 @@ function validateEmail(obj) {
 		return true}
 	else {$(obj).addClass("error");return false;}
 }
+
+function validateForm(){
+	var successName=true;
+	var successEmail=true;
+
+	$("#contact :input[required]").each(function(){
+		if($(this).attr("type")=="text") successName=validateName(this);
+		if($(this).attr("type")=="email") successEmail=validateName(this);
+	});
+	if(successName&&successEmail) {
+		$("#contact").html("<h3>Thank you for contact me.</h3>")
+		// $.ajax({
+		//   type: "POST",
+		//   url: "/",
+		//   data: {
+		//   		name: $("#c-name").val(),
+		//   		email: $("#c-email").val(),
+		//   		message: $("#c-message").val()
+		//   }
+		// });
+	}
+}
+
+
+

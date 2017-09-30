@@ -6,6 +6,7 @@ block css
 	link(href="https://fonts.googleapis.com/css?family=Flamenco", rel="stylesheet")
 block js
 	script(src='/js/init.js')
+	script(src='/js/common.js')
 block content
 	if galleries.length
 			each gallery in galleries
@@ -42,7 +43,7 @@ block content
 								img(src=work.thumb.url)
 						-i=i+1
 				div.clear
-				a.jb-link(href='/gallery') Discover more...
+				a.jb-link(href='/works') Discover more...
 	div.wide
 			div.heading Julia Budnik Art: the beauty of streets
 			div.content
@@ -54,20 +55,23 @@ block content
 			div.column.left
 				img(src="images/bio.jpg", width="100%")
 			div.column.right 
-				|My name is Julia and I am the artist. Here you can find the collection of my art works. I want to share with you |the beauty of the architecture, memories about great travels and inspire people to keep nice moments in their hearts. I  draw different cities and towns on paper, walls or furniture.  If you want to order my art, let me know the |city and the format: 
+				|My name is Julia and I am the artist. Here you can find the collection of my art works. I want to share with you |the beauty of the architecture, memories about great travels and inspire people to keep nice moments in their hearts. I  draw different cities and towns on paper, walls or furniture.  If you want to order my art, let me know the city and the format: 
 				a.jb-link.white(href="mailto:julia.budnik.art@gmail.com" ) julia.budnik.art@gmail.com
 				|. To discover the full collection of my art works, please visit my 
-				a.jb-link.black(href="http://juliabudnikart.blogspot.kr/") blog 
+				a.jb-link.black(href="http://juliabudnikart.blogspot.kr/", target="_blank") blog 
 			div.clear
 	div.container.city.third
 	div.container.page#contact
 			div.heading.with-margin Contact
+			if enquirySubmitted
+
+			h3=enquirySubmitted
 			div.column.left
-				input.black-input(type="text", placeholder="Name*", required, onkeyup="validateName(this)")
-				input.black-input(type="email", placeholder="E-mail*",required, onkeyup="validateEmail(this)")
+				input.black-input(type="text", placeholder="Name*", required, onkeyup="validateName(this)", id="c-name")
+				input.black-input(type="email", placeholder="E-mail*",required, onkeyup="validateEmail(this)" id="c-email")
 
 			div.column.right
-				textarea.black-input(type="text",height="100", placeholder="Message")
+				textarea.black-input(type="text",height="100", placeholder="Message" id="c-message")
 			div.clear
 			
 			input.black-input(onclick="validateForm()" 	type="button" value="Send" )

@@ -21,11 +21,10 @@ p{
 input:focus,
 select:focus,
 textarea:focus,
-button:focus {
+button:focus	 {
     outline: none;
 }
 .header{
-	background-image: url('../images/bg-gr.png');
 	background-repeat: repeat-x;
 	width:100%;
 	z-index:9;
@@ -255,8 +254,9 @@ nav a {
 }
 
 nav a:hover,
-nav a:focus {
+nav a:focus, nav a:active {
 	outline: none;
+	color:#3b3b3b;
 }
 
 .menu a {
