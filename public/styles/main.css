@@ -116,6 +116,7 @@ button:focus	 {
 	display: inline-block;
 	height: 10px;
 	width:10px;
+	margin-left:5px;
 	cursor: pointer;
 	background-image: url('../images/circle.png');
 	background-position: bottom;
@@ -405,7 +406,7 @@ footer{
 	position:relative;
 	padding-top:40px;
 	padding-bottom:40px;
-
+	overflow:hidden;
 }
 .img-content img{
  	position: absolute;
@@ -414,8 +415,9 @@ footer{
     left: 0;
     right: 0;
     bottom: 0;
-    overflow: hidden;
-    width:auto;
+    height: auto;
+    display: block;
+    max-width:100%;
 }
 .close{
 	position: absolute;

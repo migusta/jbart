@@ -63,17 +63,12 @@ block content
 	div.container.city.third
 	div.container.page#contact
 			div.heading.with-margin Contact
-			if enquirySubmitted
-
-			h3=enquirySubmitted
 			div.column.left
 				input.black-input(type="text", placeholder="Name*", required, onkeyup="validateName(this)", id="c-name")
 				input.black-input(type="email", placeholder="E-mail*",required, onkeyup="validateEmail(this)" id="c-email")
-
 			div.column.right
 				textarea.black-input(type="text",height="100", placeholder="Message" id="c-message")
 			div.clear
-			
 			input.black-input(onclick="validateForm()" 	type="button" value="Send" )
 			div.social-contacts
 				a.social.bs(href="http://juliabudnikart.blogspot.kr/", target="_blank")

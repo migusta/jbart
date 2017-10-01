@@ -98,16 +98,27 @@ function validateForm(){
 		if($(this).attr("type")=="email") successEmail=validateName(this);
 	});
 	if(successName&&successEmail) {
-		$("#contact").html("<h3>Thank you for contact me.</h3>")
-		// $.ajax({
-		//   type: "POST",
-		//   url: "/",
-		//   data: {
-		//   		name: $("#c-name").val(),
-		//   		email: $("#c-email").val(),
-		//   		message: $("#c-message").val()
-		//   }
-		// });
+		$("#contact").html("<h3>Thank you for contact me.</h3>");
+		// var name=$.trim($("#c-name").value());
+		// var email=$.trim($("#c-email").value());
+		// var message=$.trim($("#c-message").value());
+
+		// var url="/feedback?name="+name+"&email="+email+"&message="+message;
+		// console.log(url);
+		// //отправляем запрос
+		// xhr = new XMLHttpRequest();
+		// xhr.open( "GET", url, false );
+		// xhr.onload = function() {
+		// if (xhr.readyState == 4) {
+		// // console.log(xhr.responseText)
+		// var newId = JSON.parse(xhr.responseText).id //переводим текст в объект и берем ключ
+		// if(newId != undefined)
+		// 	$("#contact").html("<h3>Thank you for contact me.</h3>");
+		// }
+		// }
+		// xhr.send( null );
+
+
 	}
 }
 

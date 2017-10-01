@@ -1,0 +1,19 @@
+extends ../views/index
+block feedback
+	if enquirySubmitted
+			h3 Thanks for getting in touch.
+	else
+		div.column.left
+			input.black-input(type="text", placeholder="Name*", required, onkeyup="validateName(this)", id="c-name")
+			input.black-input(type="email", placeholder="E-mail*",required, onkeyup="validateEmail(this)" id="c-email")
+
+		div.column.right
+			textarea.black-input(type="text",height="100", placeholder="Message" id="c-message")
+		div.clear
+		
+		input.black-input(onclick="validateForm()" 	type="button" value="Send" )
+		div.social-contacts
+			a.social.bs(href="http://juliabudnikart.blogspot.kr/", target="_blank")
+			a.social.ig(href="https://www.instagram.com/martovskiiejik/",target="_blank")
+			a.social.vimeo(href="https://vimeo.com/user69484236", target="_blank")
+		div.clear
