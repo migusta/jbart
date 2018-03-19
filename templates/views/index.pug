@@ -75,17 +75,19 @@ block content
 				//- 	textarea.black-input(type="text",height="100", placeholder="Message" id="c-message")
 				//- div.clear
 				//- input.black-input(onclick="validateForm()" 	type="button" value="Send" )
-				.form-group(class=validationErrors.name ? 'has-error' : null)
-							label Name
-							input(type='text', name='name.full', value=formData['name.full']).form-control
-				.form-group(class=validationErrors.email ? 'has-error' : null)
-					label Email
-					input(type='email', name='email', value=formData.email).form-control
-				.form-group(class=validationErrors.message ? 'has-error' : null)
-					label Message
-					textarea(name='message', placeholder='Leave us a message...' rows=4).form-control= formData.message
+				div.column.left
+					.form-group(class=validationErrors.name ? 'has-error' : null)
+						//- label Name
+						input.black-input(type='text',required, name='name.full', value=formData['name.full'], placeholder="Name")
+					.form-group(class=validationErrors.email ? 'has-error' : null)
+						//- label Email
+						input.black-input(type='email',required, name='email', value=formData.email, placeholder="E-mail*")
+				div.column.right
+					.form-group(class=validationErrors.message ? 'has-error' : null)
+					//- label Message
+					textarea.black-input(name='message', placeholder='Message' )= formData.message
 				.form-actions
-					button(type='submit').btn.btn-primary Send
+					button.black-input(type='submit') Send
 				div.social-contacts
 					a.social.bs(href="http://juliabudnikart.blogspot.kr/", target="_blank")
 					a.social.ig(href="https://www.instagram.com/martovskiiejik/",target="_blank")

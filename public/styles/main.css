@@ -332,7 +332,7 @@ nav a:focus, nav a:active {
 	color:red;
 	border:2px solid red;
 }
-.black-input[type='button']:hover{
+button.black-input:hover{
 	color:#fff;
 	background-color: #948e8e;
 }
@@ -349,6 +349,10 @@ nav a:focus, nav a:active {
 }
 textarea.black-input{
 	height:90px;
+	resize: none;
+}
+.form-group{
+	margin:0;
 }
 .social-contacts{
 	padding:25px;

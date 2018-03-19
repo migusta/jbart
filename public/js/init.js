@@ -93,12 +93,12 @@ function validateForm(){
 	var successName=true;
 	var successEmail=true;
 
-	$("#contact :input[required]").each(function(){
+	$("#contact-form :input[required]").each(function(){
 		if($(this).attr("type")=="text") successName=validateName(this);
 		if($(this).attr("type")=="email") successEmail=validateName(this);
 	});
 	if(successName&&successEmail) {
-		$("#contact").html("<h3>Thank you for contact me.</h3>");
+	return true;
 		// var name=$.trim($("#c-name").value());
 		// var email=$.trim($("#c-email").value());
 		// var message=$.trim($("#c-message").value());
@@ -126,12 +126,14 @@ function validateForm(){
 jQuery("#contact-form").on('submit',function(e){
   e.preventDefault();
 
+  if(validateForm()){
+
   var data={ action: 'contact',
   'name.full': $("input[name='name.full']").val(),
   email: $("input[name='email']").val(),
   message: $("textarea[name='message']").val() };
 
-  console.log(data);
+  $("#contact-form button").attr("disabled","disabled");
 
   $.ajax({
   	type: "POST",
@@ -139,6 +141,10 @@ jQuery("#contact-form").on('submit',function(e){
   	data: data
   }).done((res)=>{
 	$("#contact-form").html("Thanks for getting in touch.");
-});
+	$("#contact-form button").removeAttr("disabled");
+	}).fail((e) => {
+	$("#contact-form button").removeAttr("disabled");
+	});
+	}
 });
 
