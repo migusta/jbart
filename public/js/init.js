@@ -123,4 +123,22 @@ function validateForm(){
 }
 
 
+jQuery("#contact-form").on('submit',function(e){
+  e.preventDefault();
+
+  var data={ action: 'contact',
+  'name.full': $("input[name='name.full']").val(),
+  email: $("input[name='email']").val(),
+  message: $("textarea[name='message']").val() };
+
+  console.log(data);
+
+  $.ajax({
+  	type: "POST",
+  	url: "/",
+  	data: data
+  }).done((res)=>{
+	$("#contact-form").html("Thanks for getting in touch.");
+});
+});
 

@@ -1,5 +1,10 @@
 extends ../layouts/default
 
+block css
+	link(href="/styles/main.css", rel="stylesheet")
+	link(href="https://fonts.googleapis.com/css?family=Sacramento", rel="stylesheet")
+	link(href="https://fonts.googleapis.com/css?family=Flamenco", rel="stylesheet")
+
 mixin post(post)
 	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
 		h2: a(href='/blog/post/' + post.slug)= post.title
@@ -23,8 +28,7 @@ mixin post(post)
 			p.read-more: a(href='/blog/post/' + post.slug) Read more...
 
 block intro
-	.container
-		h1= data.category ? data.category.name : 'Blog'
+	div.heading= data.category ? data.category.name : 'Blog'
 
 block content
 	.container: .row

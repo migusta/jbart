@@ -451,6 +451,9 @@ footer{
 	width: 640px;
 	height: 360px;
 }
+.post h2 a, p a,.post h2 a:hover, p a:hover{
+	color:black;
+}
 
 /*for Iphone*/
 @media only screen and (min-device-width: 320px) and (max-device-width: 639px ) {
